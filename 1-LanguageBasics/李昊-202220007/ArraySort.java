@@ -1,7 +1,7 @@
 import com.sun.media.sound.SoftTuning;
 
 /**
- * @author q
+ * @author Hao Li
  * @create 2020-09-08 17:03
  */
 public class ArraySort {
