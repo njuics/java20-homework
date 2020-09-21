@@ -1,3 +1,6 @@
+import java.util.Random;
+
+
 public class World {
     final int HULU_NUM=7;
     public static void main(String[] args) throws Exception {
@@ -6,6 +9,16 @@ public class World {
         World w=new World();
 
         w.Self_intro();
+
+
+        w.Shuffle();
+        System.out.println("Shuffle() done!");
+        w.Self_intro();
+
+        System.out.println("Self_intro done!");
+        w.Orchestration();
+        w.Self_intro();
+        System.out.println("Sorted by grandpa");
     }
 
     Grandpa gp;
@@ -26,5 +39,36 @@ public class World {
         {
             hulu[i].intro();
         }
+    }
+
+    void Swap2boy(int a,int b)
+    {
+        if (a==b) return;
+        HuluBrother temp= hulu[a];
+        hulu[a]=hulu[b];
+        hulu[b]=temp;
+    }
+
+    void Shuffle()
+    {
+        for(int i=0;i<100;i++)
+        {
+          Random r1=new Random();
+          int a=r1.nextInt(7);
+          int b=r1.nextInt(7);
+          
+        
+            Swap2boy(a, b);
+        }
+    }
+
+    void Orchestration()
+    {
+        gp.Sort(this);
+    }
+
+    void Choreography()
+    {
+        //sort by themselves
     }
 }
