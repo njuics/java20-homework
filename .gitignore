@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,java
 
+*.json
+
 ### Java ###
 # Compiled class file
 *.class
