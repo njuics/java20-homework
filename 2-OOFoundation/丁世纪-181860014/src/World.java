@@ -4,26 +4,25 @@ import java.util.Random;
 public class World {
     final int HULU_NUM=7;
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+      
 
         World w=new World();
 
-        w.Self_intro();
-
-
         w.Shuffle();
-        System.out.println("Shuffle() done!");
-        w.Self_intro();
-
-        System.out.println("Self_intro done!");
+        System.out.println("Orchestration...");
         w.Orchestration();
         w.Self_intro();
-        System.out.println("Sorted by grandpa");
-    }
+        System.out.println("Sorted by grandpa.");
 
+        w.Shuffle();      
+        System.out.println("Choreography...");
+        w.Choreography();
+        w.Self_intro();
+        System.out.println("Sorted by themselves.");
+    }
     Grandpa gp;
     HuluBrother[] hulu;
-    String[] names={"dawa","erwa","sanwa","siwa","wuwa","liuwa","qiwa"};
+    String[] names={"大娃","二娃","三娃","四娃","五娃","六娃","七娃"};
     World()
     {
         gp=new Grandpa();
@@ -56,10 +55,10 @@ public class World {
           Random r1=new Random();
           int a=r1.nextInt(7);
           int b=r1.nextInt(7);
-          
-        
-            Swap2boy(a, b);
+          Swap2boy(a, b);
         }
+        System.out.println("HuluBrothers shuffled. Number off!");
+        Self_intro();
     }
 
     void Orchestration()
@@ -70,5 +69,9 @@ public class World {
     void Choreography()
     {
         //sort by themselves
+        for(int i=0;i<HULU_NUM;i++)
+        {
+            hulu[i].Self_sort(this, i);
+        }
     }
 }
