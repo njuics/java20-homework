@@ -1,19 +1,13 @@
-1. 请使用到面向对象中的**封装、继承、多态等**特性进行设计，并使用到Java中的**接口、构造器、静态变量、静态块、包、修饰符等**语言机制；
+### 作业三：面向葫芦娃编程
 
-封装：就是设置private之类的
-继承：爷爷和葫芦娃都继承Character
+#### 设计思想
 
-多态：使用不同的new创建不同的Character(爷爷和葫芦娃)
+葫芦娃和爷爷可以进行不同的动作，但是同时他们都是世界中的人物，都有自己的名字，那么可以设计一个父类，该父类声明他们的姓名，而葫芦娃和爷爷的类均是该类的继承。
 
+我们需要两种不同的排序模式，其一为爷爷指导，其二为葫芦娃自己排序，无论使用哪种排序方法（插入、冒泡等），都需要分别实现<指导和自排>两种排序模式，可以直接将这两种模式函数原型声明为接口，方便后续更多排序方法的应用。同时，不同的排序方法类可以是一个排序父类的继承，通过在父类中声明姓名来得知排序方法的名字
 
+我们可以为该世界的所有角色方法等提供一个舞台，在这个舞台类上，我们初始化爷爷和葫芦娃们，以及各种不同的排序方法，然后就可以应用他们进行排序游戏了！
 
-接口：chore和orche两种排序都是接口，需要在Sort这个类里进行不同的实现
+#### UML类图
 
-构造器：进行爷爷和葫芦娃的初始化时会使用构造器，主要是赋值
-
-修饰符：可以把name设置为protected
-
-包：可以用一些标准的package
-
-静态变量：可以在character里设置一个静态的total，记录创建的角色总数，也可以设置一个葫芦娃个数上限，如果葫芦娃的order超过7就保存
-
+![](http://www.plantuml.com/plantuml/png/bPFFRjGm4CRlVefHk2Jgxe4J4bggKWuzmLRQ8-8mjOUDXMD7zcnf1RmxJXDiHsqjzfQPx_Tv_jYv2eoUJuCH8yeVU2JOxsy_gdkqaXJiTaLqUGc_180q60BSUBHgn1H_GdFjNGglJtTtXWxESqeTo93aLUhMuEEDToUheEgCmMVYtgbShaUFaicl8QSeY3z2BDt1xlTs2mqzC5aLci8rj_kwBaJHMwDjOBIiaQa15osplSga3LMXF2tKmRmzYCqLjacD_30Q6iXoQF8cG6HNdIiFNE-aN7u-xNMcdE8zNCGfM4kuTrg1jfhZra8xR-_hjwu23wXjUs2lxN42_rrOfBvhYmO6RVTUaV_mzhc43xFqBalR-QljdgUqPN0Jlu6v7bWSg00ldXeAFt5SEY-roItTCAAdfARd5uiidsq7EVkIQmEBkyJMXKielTI8lIdQpaBoUngTvpYvoDSqYOihfEINw3-VUQhXlEmfi4VMpgRxtS0oI_U2HVREapjw7Fl7uaMKBp6kBqTnWBNqVuNNdahb_BFCQ8xQBajdL5vxgZFdF_6CVMP7vUWhikeqcBy0)
