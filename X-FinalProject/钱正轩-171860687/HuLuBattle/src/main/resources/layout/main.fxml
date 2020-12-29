@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane fx:id="logPane" fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <Label fx:id="logLabel" textAlignment="JUSTIFY" wrapText="true">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
+         </content>
+      </ScrollPane>
+      <HBox>
+         <children>
+            <AnchorPane fx:id="mapPane" maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0">
+               <children>
+                  <Group fx:id="shapeGroup" />
+               </children></AnchorPane>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <GridPane alignment="CENTER" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="openServerBtn" focusTraversable="false" mnemonicParsing="false" onAction="#openServerBtnHandler" text="以服务器启动" />
+                        <Button fx:id="closeServerBtn" focusTraversable="false" mnemonicParsing="false" onAction="#closeServerBtnHandler" text="关闭" GridPane.columnIndex="1" />
+                        <Button fx:id="openClientBtn" focusTraversable="false" mnemonicParsing="false" onAction="#openClientBtnHandler" text="以客户端启动" GridPane.rowIndex="1" />
+                        <Button fx:id="closeClientBtn" focusTraversable="false" mnemonicParsing="false" onAction="#closeClientBtnHandler" text="关闭" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button fx:id="loadLogBtn" focusTraversable="false" mnemonicParsing="false" onAction="#loadLogBtnHandler" text="加载日志文件" GridPane.rowIndex="2" />
+                        <Button fx:id="saveLogBtn" focusTraversable="false" mnemonicParsing="false" onAction="#saveLogBtnHandler" text="保存" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+                  <VBox fx:id="controlBox" alignment="CENTER" spacing="20.0" visible="false" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="moveBtn" focusTraversable="false" mnemonicParsing="false" onAction="#moveBtnHandler" text="移动">
+                           <tooltip>
+                              <Tooltip fx:id="moveTip" text="Empty Tooltip" />
+                           </tooltip>
+                        </Button>
+                        <Group fx:id="skillGroup" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="cancelBtn" focusTraversable="false" mnemonicParsing="false" onAction="#cancelBtnHandler" text="取消" />
+                              <Button fx:id="submitBtn" focusTraversable="false" mnemonicParsing="false" onAction="#submitBtnHandler" text="确定" />
+                              <Button fx:id="skipBtn" mnemonicParsing="false" onAction="#skipBtnHandler" text="跳过" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
