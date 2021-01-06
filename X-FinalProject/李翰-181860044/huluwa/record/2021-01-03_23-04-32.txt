@@ -1,0 +1,115 @@
+one shoot
+littleSoldier3 shoot
+one move 4
+one shoot
+littleSoldier3 move 3
+littleSoldier3 shoot
+one move 2
+one shoot
+littleSoldier2 move 2
+one shoot
+littleSoldier1 move 2
+one shoot
+littleSoldier3 move 1
+one shoot
+littleSoldier2 shoot
+two move 1
+two shoot
+littleSoldier1 shoot
+one shoot
+littleSoldier1 shoot
+two move 2
+scorpion move 1
+scorpion shoot
+one shoot
+scorpion shoot
+one move 2
+one shoot
+scorpion shoot
+one shoot
+littleSoldier4 shoot
+one shoot
+littleSoldier4 shoot
+three shoot
+scorpion move 2
+scorpion shoot
+three move 3
+scorpion shoot
+three move 2
+scorpion shoot
+grandpa shoot
+littleSoldier5 shoot
+four shoot
+littleSoldier5 shoot
+four shoot
+littleSoldier5 shoot
+four shoot
+littleSoldier5 shoot
+four shoot
+scorpion move 2
+scorpion shoot
+three shoot
+scorpion shoot
+three move 4
+scorpion shoot
+three move 1
+scorpion move 1
+scorpion shoot
+grandpa move 2
+scorpion move 2
+scorpion shoot
+grandpa move 4
+grandpa shoot
+scorpion shoot
+grandpa shoot
+littleSoldier6 move 1
+littleSoldier6 shoot
+grandpa move 2
+grandpa shoot
+littleSoldier6 move 2
+littleSoldier6 shoot
+five shoot
+littleSoldier6 shoot
+five shoot
+scorpion move 2
+scorpion shoot
+five shoot
+scorpion shoot
+five shoot
+scorpion shoot
+grandpa shoot
+scorpion shoot
+six shoot
+snack shoot
+six shoot
+snack shoot
+six shoot
+littleSoldier7 shoot
+six shoot
+snack move 3
+snack shoot
+six shoot
+snack shoot
+pangolin shoot
+snack shoot
+pangolin shoot
+snack shoot
+seven move 1
+seven shoot
+littleSoldier8 move 1
+littleSoldier8 shoot
+pangolin shoot
+littleSoldier8 shoot
+seven shoot
+snack shoot
+seven shoot
+littleSoldier8 shoot
+seven shoot
+snack shoot
+pangolin shoot
+snack shoot
+pangolin shoot
+snack shoot
+pangolin shoot
+scorpion move 2
+scorpion shoot

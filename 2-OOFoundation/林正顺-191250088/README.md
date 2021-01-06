@@ -1,0 +1,7 @@
+总共有两个主要类CalabashBrothers和GrandFather类、一个辅助排序类Sort以及Sort的两个子类QuickSort和BubbleSort
+
+CalabashBrothers为葫芦娃类，记录葫芦娃的名字（name）以及排行老几（number），有一个lineUpByOurseives静态方法用来实现葫芦娃之间互相配合排序（本质为冒泡排序）：从第一个葫芦娃开始，不断和后面的葫芦娃比较，如果弟弟在前面就和后面一个的哥哥交换位置，不断重复直到排序完成
+
+GrandFather类为爷爷类，拥有长度为7的一个葫芦娃数组（brothers）和一个lineUpByGrandFather的本质为快排的葫芦娃排序方法
+
+Sort只有一个没有实现的sort方法，通过继承覆盖这个方法可以实现不同的辅助排序算法

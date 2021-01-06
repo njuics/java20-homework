@@ -1,0 +1,1 @@
+程序将会读取同一目录下的Monster文件，并将其按base64解码后存入classPath目录下，生成Monster.class文件。
