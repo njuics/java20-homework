@@ -1,4 +1,4 @@
-package edu.nju.kecheng.advancedjava2020fall.testing.test;
+package testing.test;
 
 import edu.nju.kecheng.advancedjava2020fall.testing.src.Color;
 import edu.nju.kecheng.advancedjava2020fall.testing.src.Gender;
