@@ -1,0 +1,21 @@
+## 葫芦娃排序
+
+### BaseSort & BubbleSort & SelectSort
+在本次作业里，我首先把排序这一行为抽象成一个对象，作为接口类，提供orchestration和choreography两种排序模式
+
+之后我定义了BubbleSort和SelectSort分别对排序接口类进行实现，分别使用两种不同的排序算法
+
+### Grandpa & CalabashBoy
+这两个类分别是对爷爷和葫芦娃本身的抽象，作为第三方观察者和待排序元素本身的实例
+
+### BoyQueue
+为了便于管理葫芦娃队列，定义了BoyQueue，该类提供了如打乱队伍，显示队伍等基本功能，更重要的是提供了排序函数sort
+该方法接受两个参数，分别为排序算法（对象）和排序模式，之后使用参数提供的算法根据对应模式进行排序。
+由于参数使用的是基类引用，实际传入参数可以为任意具体排序算法对象，这里体现了java的多态性
+
+### 代码耦合性
+由于实际对葫芦娃队伍的排序，仅仅是调用BoyQueue对象的sort函数，并传入参数即可。
+因此在需要切换排序算法时，不需对框架代码本身做任何调整，只需实现对应的排序算法对象，实例化之后，作为参数传递即可。
+
+###UML类图
+![UML类图](http://www.plantuml.com/plantuml/png/lLBDJlCm4BpxANpCfpPFy76eoe4JbL2UO1DlOakED_Y7KWNU7Ji4EmKkI8XSihCpcHd5FZWFreTHiqw3S_mMDBJWv94kCwjvuwqo0pSmOaJAU7uYjjkggdyH9s90Vw85FP4IVB9nkS2MI2COterJeTqP4dfTOwFHGy20yxKvVqnBjilyna26ljTN2phdChqo8fLBSnpnkSZ8-ke83fiuBEWUlIInLsQ59B0KkxDWn0If5rc5nbSVLNYx3aMSRMV6uxCcakqaEc_1ApBLQiY7z_V-gzt_xSUT98iKnPEyLDzeItPeM_qBwJy8pzaDQkpyNsVd9TNrzjAmV0mtBv4fF-OJKLgp0neHHlq6)

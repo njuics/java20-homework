@@ -1,0 +1,53 @@
+# README
+
+## 思路介绍
+
+Action为interface，提供一个对队列中葫芦娃比较交换的接口，在后续的类中对该接口的实际使用进行定义
+
+Human类implements Action，同时拥有Human具有的成员变量和成员函数。
+
+- 成员变量中，names和humanQueue属于固定成员，并且只需要在开始时初始化一次，因此设置为static final，并使用static静态块来初始化；
+- name，id，position分别为爷爷或者葫芦娃都具有的属性值，在构造函数中初始化
+- 成员函数中，set\*()和get\*()函数为成员变量的封装访问和赋值
+- compareExchange函数是Action提供的接口，但在Human类中不需要明确的定义使用，将在子类中有不同的定义
+
+GrandFather类继承于Human类，并对compareExchange函数重定义，对葫芦娃进行排序
+
+CalaBro类继承于Human类，并对compareExchange函数重定义，葫芦娃互相比较排序。exchange函数为葫芦娃交换顺序，为辅助函数。
+
+QueuingActivity为主类，其中有main函数，同时拥有init()函数初始化参加活动的爷爷和葫芦娃，orchestrationQueuing和choreographyQueueing两个函数分别进行两种排序
+
+## 函数介绍
+
+GrandFather类compareExchange
+
+爷爷对其身后的葫芦娃进行判断，如果某个位置上的葫芦娃的编号和位置不对应，就将这个葫芦娃调换到对应的位置上，然后把对应位置上的葫芦娃换过来，继续判断这个葫芦娃是否和位置对应。如果对应就会来判断下一个。当判断到最后一个葫芦娃时就完成了排序
+
+CalaBro类compareExchange
+
+模拟葫芦娃相互比较和交换的过程。this指向的葫芦娃会询问自己前后相邻葫芦娃的编号，如果前面的葫芦娃编号大、或者后面的葫芦娃编号小，就与对应的葫芦娃交换位置，然后继续询问，直到不与相邻葫芦娃发生交换为止
+
+## 特性使用
+
+封装：体现在Human类中的set\*()和get\*()函数
+
+继承：GrandFather类和CalaBro类继承于Human类
+
+多态：QueuingActivity类中的attendPeople为一个Human类型的List，但分别指向一个GrandFather对象和七个CalaBro对象。当使用不同的排队方式时，会直接调用List中Human指针指向的对象的compareExchange函数，会根据对象具体所属的类调用不同定义的函数
+
+接口：Action接口
+
+构造器：Human，GrandFather和CalaBro类的构造函数
+
+静态变量：names，humanQueue，random
+
+静态块：names，humanQueue，random的初始化
+
+包：需要使用到的类被放置在homework3.mylib中，主类被放置在homework3.main中。如果未来需要，功能类定义都可以放在mylib中，主程序放在main中
+
+修饰符：protected，private，public的使用
+
+## PlantUML
+
+![](http://www.plantuml.com/plantuml/png/XPBFRkCW4CRlF0NINcnPpcMF6qNPLlqJgQfIzLZrCCLJZ6B00fmsSlFk1Pi4DwtIY_4CFxxv66Pf7HZNoOQqm3R0aTPQufiscxypkMl42-s9K0xDAp2a_vaJMlMawFqn9zX-gqL5cPOj6BnwPpKeZbbEzeIm1gobjvq4pvS7_j4PeVZJCrKWqIQT4VJvEgmF7NP8_enmG7tWJL1HZMkhhGX6I34SoyQzd1JXXwDRLPaF1cysH0c8afwvbu29Yl6aOb9RnseJEkMcTkB-kNxS653LDRWQZU_Y94eMVvEuX0OkZ9uqzKvODryfXnpDWWPDBKaHkQDmEGZZGJ4Qp_-TgpY-Dvr_p6RZ2v7m3OcodDvbcevr_V6VHWg4edsyINXceNWeiXLkTtgZGND1mJbKrHfrss0Y1iz22PVb9qbjM8tM6GZMOubl4AkrGSqDjFKkCL_7EdZDZWCBXjlGanFJL9TbRCsUBBtHJZQV)
+

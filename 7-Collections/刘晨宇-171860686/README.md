@@ -1,0 +1,9 @@
+# 7-Collections
+
+1. 使用了集合框架的容器类ArrayList存放葫芦娃。
+2. 葫芦娃的名字在构造器中通过UUID随机生成，性别用枚举内部类Gender表示，也在构造器中随机决定。
+3. Sorter接口的方法public void sort(List<CalabashBrother> list)能够对葫芦娃们组成的队列进行排序。使用List作为参数的原因是，Iterable和Collection接口不能提供足够的排序所需的方法。实现了Sorter接口的类包括BubbleSorter和QuickSorter，分别实现了基于迭代器的冒泡排序和快速排序。注意实现Sorter接口的是Orchestration形式的排序器，Choreography方式不依赖额外的排序器，而是由葫芦娃类的方法bubbleSort()和quickSort()实现。
+4. BubbleSorter和QuickSorter的构造器接受一个类型为Comparator<CalabashBrother>的参数，通过使用不同的Comparator，就能以不同的顺序对葫芦娃进行排序。实现了Comparator<CalabashBrother>接口的类包括DescendingComparator和RandomComparator，分别用于字典序降序排序和随机排序。此外，葫芦娃类实现了Comparable接口，它的自然序，即compareTo方法，返回字典序升序排序。
+5. Grandpa类为老爷爷的抽象，它提供public void sort(List<CalabashBrother> list)对葫芦娃们进行排序。实际上它将该任务委托给作为成员变量的Sorter来实现。并且，只要通过setSorter()方法设置不同的Sorter，老爷爷就能用各种不同的方式，以及不同的顺序，对葫芦娃进行排序。
+6. GenderFilter类提供静态方法List<CalabashBrother> filter(List<CalabashBrother> list, CalabashBrother.Gender gender)方法，用于获取一个队列中给定性别的葫芦娃组成的子队列。
+7. 程序的入口是CollectionSort类的main()方法，在该方法中演示了对葫芦娃按照名字的字典序进行正序、倒序、随机排序，再将葫芦娃按性别分为两队，再按照名字的字典序正序进行排序的过程（分为两队后也能按照不同顺序排序，为输出简洁考虑，只进行正序排序）。

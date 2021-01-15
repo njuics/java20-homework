@@ -1,0 +1,66 @@
+@startuml hello
+Story *--> SortStrategy
+Story *-- GrandFather
+StrategyFactory --> SortStrategy
+GrandFather "1" *-- "7" CalabashBrother
+
+class Story {
+    -SortStrategy strategy
+    -GrandFather gfather
+    -List<CalabashBrother> queue
+    Story()
+    +setStrategy(SortStrategy): void
+    +getGrandFather(): GrandFather
+    -echo(Sting): void
+    +start(void): void
+}
+
+class StrategyFactory {
+    -Story ctx
+    -String strategies
+    StrategyFactory(Story)
+    -echo(): void
+    -alarm(): void
+    +getStrategy(String): SortStrategy
+    +getStrategyFromInput(): SortStrategy
+}
+
+class Human {
+    #String nickname
+    +reportName(): void
+    {abstract}#lines(): void
+    +say(): void
+}
+
+interface SortStrategy {
+    +sort(List<CalabashBrother>): void
+}
+
+class GrandFather extends Human {
+    {static} int childrenNum
+    -CalabashBrother[] children
+    {static}-String[] nicknames
+    GrandFather()
+    +instruct(List<CalabashBrother>): void
+    +plantCalabsh(): CalabashBrother[]
+    #lines(): void
+}
+
+class CalabashBrother extends Human {
+    -int idx
+    CalabashBrother(String, int)
+    #compareTo(CalabashBrother): int
+    #lines(): void
+}
+
+class Choreography implements SortStrategy {
+    +sort(List<CalabashBrother>): void
+}
+
+class Orchestration implements SortStrategy {
+    -GrandFather gfather
+    Orchestration(GrandFather gfather)
+    +sort(List<CalabashBrother>): void
+}
+
+@enduml

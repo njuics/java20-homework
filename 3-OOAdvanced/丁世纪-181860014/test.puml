@@ -1,0 +1,60 @@
+@startuml test
+
+Human <|-- Grandpa
+Human <|-- HuluBrother
+World o- Human
+Communicate <|-- Human
+Fight<|-- Human
+Grandpa *-Sort
+
+class Human{
+  #  String name
+  #  bool sex
+  #  int age
+    # void Ask2boys2swap(World w,int a,int b)
+    + String get_name()
+    + int population()
+
+}
+
+interface Fight{
+    # void Attack();
+    # void Ultra();
+    # void Attack(Human h);
+    # void Ultra(Human h);
+}
+
+interface Communicate{
+    # void Speaksth(String str)
+    # void ReceiveInfo()
+}
+
+class Grandpa{
+    + void Shuffle(World w)
+    + void Sort(World w)
+}
+class HuluBrother{
+    -int rank
+    -String skill1,skill2
+    +int get_rank()
+    +void intro()
+    +void Self_sort(World w,int i)
+    +Learn(String a,String b)
+
+}
+class Sort{
+    enum Sort_method {bubble,select,insert,quicksort}
+    +void SortInt(int[] a,Sort_method m)
+}
+class World{
+    -Grandpa gp;
+    -HuluBrother[] hulu;
+    -String[] names={"大娃","二娃","三娃","四娃","五娃","六娃","七娃"};
+    + static final int HULU_NUM=7;
+
+    - void Self_intro()
+    + void Swap2boy(int a,int b)
+    - void Orchestration()
+    - void Choreography()
+}
+@enduml

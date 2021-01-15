@@ -1,0 +1,42 @@
+[
+    {
+        "id": 0,
+        "name": "枪兵",
+        "hp": 100,
+        "def": 20,
+        "mobility": 2,
+        "skillList": [
+            0
+        ]
+    },
+    {
+        "id": 1,
+        "name": "骑兵",
+        "hp": 100,
+        "def": 10,
+        "mobility": 4,
+        "skillList": [
+            1
+        ]
+    },
+    {
+        "id": 2,
+        "name": "弓兵",
+        "hp": 100,
+        "def": 0,
+        "mobility": 1,
+        "skillList":[
+            2
+        ]
+    },
+    {
+        "id": 3,
+        "name": "牧师",
+        "hp": 80,
+        "def": 0,
+        "mobility": 1,
+        "skillList":[
+            3
+        ]
+    }
+]
