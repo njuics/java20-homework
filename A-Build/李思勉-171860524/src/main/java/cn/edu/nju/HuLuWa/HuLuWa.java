@@ -1,5 +1,8 @@
 package cn.edu.nju.HuLuWa;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -17,13 +20,10 @@ public class HuLuWa extends Creature{
         huLuWaList.add(this);
     }
     public String getRandomName(){
-        String albet = "abcdefghijklmnopqrstuvwxyz";
-        String name = ""+ Character.toUpperCase(albet.charAt(random.nextInt(26)));
-        int nameLength = random.nextInt(3)+2;
-        for(int i=0;i<nameLength;i++){
-            char c = albet.charAt(random.nextInt(26));
-            name = name + c;
-        }
+        int nameLength = random.nextInt(3)+3;
+        String name = RandomStringUtils.random(nameLength,true,false);
+        name = name.toLowerCase();
+        name = StringUtils.capitalize(name);
         return name;
     }
     public int getRank(){
