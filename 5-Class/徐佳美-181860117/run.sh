@@ -1,0 +1,4 @@
+javac CustomClassLoader.java
+java CustomClassLoader
+javac ClassLoaderMain.java
+java  ClassLoaderMain

@@ -1,0 +1,155 @@
+@startuml
+Interface ShowSituation{
++ String[] situation(int line, int maxColLen)
+}
+
+
+together {
+ enum FACTION_TYPE{
+JUSTICE,
+EVIL,
+OTHERS
+}
+
+ abstract class Unit implements ShowSituation{
+# int health
+# FACTION_TYPE factionType
+# int id
+# {static} int unitNum = 0
+# long birthTime
++ {abstract} int getHealth()
++ {abstract} FACTION_TYPE getFactionType()
++ {abstract} int getId()
++ {abstract} long getBirthTime()
+# String strComplement(String str, int desLen)
+}
+}
+
+class Character extends Unit{
+# String name
+# int sightSize
+- final int moveAbility = 1
+# Tile tileIAmOn
+# Vector<Vector<TILE_TYPE>> mySight
+# Ground myGr
+- void renewMySight()
++ int getMoveAbility(Object obj)
++ String getName()
+- boolean amIOnTheGround()
++ int getSightSize(Object obj)
++ int findAMerginToStepIn()
++ boolean whereAmI()
++ boolean swap(Tile t)
++ boolean goToTile(int x, int y)
+- Vector<Vector<Integer>> get01Map()
+- boolean isThisPosLegal(int x, int y, Vector<Vector<Integer>> vec)
+- boolean isThisPosVacant(int x, int y, Vector<Vector<Integer>> vec)
+- Stack<Pair<Integer, Integer>> findWayFrom01Map(int stX, int stY, int edX, int edY, Vector<Vector<Integer>> map01)
++ boolean findWayToXY(int x, int y)
++ boolean wouldYouSpareATileForMe(Unit u)
++ boolean spareAPlaceForHim(Unit u)
+}
+
+
+
+class OldMan extends Character{
+- Vector<HuLuBaby> childList
++ void giveBirth(String n, COLOR c)
++ void getMeIn()
++ void getAllTheBabyIn()
++ void orderTheBabyToASeq()
++ void exchangeRandomly()
++ void orderTheBabySwapToSort()
+
+}
+
+together {
+ enum COLOR {
+RED,
+ORANGE,
+YELLOW,
+GREEN,
+CYAN,
+BLUE,
+PURPLE,
+Others
+}
+
+ class HuLuBaby extends Character{
+- OldMan myOldMan
+- COLOR color
+- int seq
++ COLOR getColor()
++ int getSeq()
++ boolean swapIfMyRightIsOlderThanMe()
+
+}
+}
+
+
+together {
+ class Tile{
+- int latitute
+- int longitude
+- Unit unitOnTile
+- boolean isTileEmpty
++ String[] seeThis(int lineNum, int maxColLines)
++ int getLatitute()
++ int getLongitude()
++ boolean isTileEmpty()
++ Unit getUnitOnTile()
+# void stepOut()
++ boolean stepInFromAnotherTile(Tile t)
++ boolean stepIn(Unit cha)
+}
+
+
+ class Ground{
+- Vector<Vector<Tile>> baseGround
+- HashMap<Character, Tile> unitOnTheGround
+- final int groundSize = 10
+- final int printLineNum = 8
+- final int printLineSize = 15
++ String seeAroud()
++ int getGroundSize()
+- Tile howIsXY(int x, int y)
++ Tile howIsXY(int x, int y, Unit you, int sightSz)
++ Tile whereIsHim(Character cha)
++ boolean isXYin(int x, int y)
++ boolean stepOnXY(int x, int y, Character cha)
++ boolean unitMoveToXY(int x, int y, Character cha)
++ boolean isUnitOnTheGround(Unit you)
++ void baseSwap(Tile t1, Tile t2, Character cha1, Character cha2)
++ Vector<Vector<TILE_TYPE>> theGroundYouCanSee(Character cha)
+}
+
+enum TILE_TYPE {
+	UNKNOWN, NOBODY, FRIEND, ENEMY, OTHERS
+}
+}
+
+together {
+ class Universe{
++ Ground mainGr
++ OldMan oldMan
++ void showTheGround()
+}
+
+ class HuLuMain{
++ {static} void main(String[] args)
+}
+}
+
+
+
+
+Ground *-- Tile
+Tile o-- Unit
+Unit .. Tile
+Universe o-- Ground
+Universe o-- OldMan
+Tile .. Character 
+Ground .. Character
+OldMan .. HuLuBaby
+HuLuBaby .. OldMan
+@enduml

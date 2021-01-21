@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "name": "劈砍",
+        "harm": true,
+        "range": 2,
+        "atk": 60,
+        "atkNum": 1
+    },
+    {
+        "id": 1,
+        "name": "冲锋",
+        "harm": true,
+        "range": 1,
+        "atk": 35,
+        "atkNum": 2
+    }
+]
